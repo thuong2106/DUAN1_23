@@ -1,49 +1,35 @@
 <?php
+// LIST LOẠI PHÒNG
 function get_room_types()
 {
-    $sql = "SELECT * FROM room_types ORDER BY room_type_name DESC";
+    $sql = "SELECT * FROM room_types ORDER BY id ASC";
     $room_type = pdo_query($sql);
     return $room_type;
 }
 
-// THÊM LOẠI PHÒNG
+// LẤY THÔNG TIN CHI TIẾT
+function get_room_type_detail($id)
+{
+    $sql = "SELECT room_type_name FROM room_types WHERE id =" . $id;
+    $room_type_detail = pdo_query_one($sql);
+    return $room_type_detail;
+}
+// ADD LOẠI PHÒNG
 function insert_room_type($tenloaiphong)
 {
     $sql = "INSERT INTO room_types(room_type_name) values('$tenloaiphong')";
     pdo_execute($sql);
 }
-
-function load_room_type_name($room_type_id)
+// UPDATE LOẠI PHÒNG 
+function update_room_types($id, $tenloai)
 {
-    $sql = "SELECT * FROM room_types WHERE id =" . $room_type_id;
-    $room_type = pdo_query_one($sql);
-    extract($room_type);
-    return $room_type_name;
-}
-
-
-// load
-function loadone_room_type($room_type_id)
-{
-    $sql = "SELECT name FROM room_types WHERE id =" . $room_type_id;
-    $room_type = pdo_query_one($sql);
-    return $room_type;
-}
-// sua 
-function update_room($id, $name)
-{
-    $sql = "update room_types set room_type_name='$name' where id= $id";
+    $sql = "UPDATE room_types SET room_type_name='$tenloai' where id= $id";
     pdo_execute($sql);
 }
-function loadall_room_type()
-{
-    $sql = "select * from room_types order by id desc";
-    $room_type = pdo_query($sql);
-    return  $room_type;
-}
-// xoa 
+
+// DELETE LOẠI PHÒNG
 function delete_room_type($id)
 {
-    $sql = "delete from room_types where id=" . $id;
+    $sql = "DELETE FROM room_types WHERE id=" . $id;
     pdo_execute($sql);
 }

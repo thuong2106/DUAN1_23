@@ -1,7 +1,13 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6"> <!-- Adjust the column size as needed -->
+<div class="container-fluid px-0">
+  <div class="row justify-content-center m-0">
+    <div class="col-md-6">
       <h1 class="font_title">THÊM MỚI LOẠI PHÒNG</h1>
+      <?php
+      // HIỂN THỊ THÔNG BÁO XÓA THÀNH CÔNG
+      if (isset($thongbao) && ($thongbao != ""))
+        echo '<div class="alert alert-success"> ' . $thongbao . '</div>';
+      echo '<script> setTimeout(function() { document.querySelector(".alert").style.display = "none"; }, 2000); // 2000ms = 2 giây </script>';
+      ?>
       <form action="index.php?act=addloaiphong" method="POST">
         <div class="mb-3">
           <label for="maloai" class="form-label">Mã loại</label>
@@ -13,11 +19,8 @@
         </div>
         <div class="mb-3">
           <input type="submit" name="themloai" value="THÊM MỚI" class="btn btn-primary me-2">
-          <input type="reset" value="NHẬP LẠI" class="btn btn-secondary me-2">
           <a href="index.php?act=loaiphong" class="btn btn-secondary">DANH SÁCH</a>
-          <?php
-          if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-          ?>
+
         </div>
       </form>
     </div>

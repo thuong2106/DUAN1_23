@@ -8,6 +8,12 @@
                             <h3 class="card-title">QUẢN LÝ LOẠI PHÒNG</h3>
                         </div>
                         <div class="card-body">
+                            <?php
+                            // HIỂN THỊ THÔNG BÁO XÓA THÀNH CÔNG
+                            if (isset($tb) && ($tb != "")) 
+                            echo '<div class="alert alert-success"> ' . $tb . '</div>';
+                            echo '<script> setTimeout(function() { document.querySelector(".alert").style.display = "none"; }, 2000); // 2000ms = 2 giây </script>';
+                            ?>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
