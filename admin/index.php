@@ -21,7 +21,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'phong':
             echo "<h1>hi</h1>";
             break;
-        case 'uploade':
+        case 'update':
             include './room_types/list.php';
             break;
     }
