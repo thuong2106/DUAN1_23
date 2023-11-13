@@ -6,11 +6,11 @@
         <?php
         if (isset($_GET['id'])) {
           $maloai = $_GET['id'];
-          foreach (loadone_room_type($maloai) as $lh) {
+          foreach (loadone_room_type($maloai) as $lp) {
         ?>
             <div class="mb-3">
               <label class="form-label">Tên loại phòng</label> <br>
-              <input type="text" name="tenloai" class="form-control" placeholder="Nhập vào mã loại" disabled value="<?= $lh ?>">
+              <input type="text" name="tenloai" class="form-control" placeholder="Nhập vào mã loại" disabled value="<?= $lp ?>">
             </div>
         <?php
           }

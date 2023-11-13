@@ -30,16 +30,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "./room_types/update.php";
             break;
-        case "xoatype":
-            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                delete_room_type($_GET['id']);
-            }
-            $room_type = loadall_room_type();
-            include "./room_types/list.php";
-            break;
         case 'listlp':
             $room_type = loadall_room_type();
-            include "./room_types/list.php";
+            include "list.php";
             break;
         case 'phong':
             echo "<h1>hi</h1>";
