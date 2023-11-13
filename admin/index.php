@@ -28,11 +28,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     header("Location: index.php?act=listlp");
                 }
             }
-            include "update.php";
+            include "./room_types/update.php";
             break;
         case 'listlp':
             $list_room_type = loadall_room_type();
-            include "list.php";
+            include "./room_types/list.php";
             break;
         case 'phong':
             echo "<h1>hi</h1>";
