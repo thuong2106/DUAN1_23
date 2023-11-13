@@ -19,3 +19,12 @@ function load_room_type_name($room_type_id){
     extract($room_type);
     return $room_type_name;
 }
+
+
+// load
+function loadone_room_type($room_type_id)
+{
+    $sql = "SELECT name FROM room_types WHERE id =" . $room_type_id;
+    $room_type = pdo_query_one($sql);
+    return $room_type;
+}

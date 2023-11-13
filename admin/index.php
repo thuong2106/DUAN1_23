@@ -11,7 +11,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include './room_types/list.php';
             break;
         case 'addloaiphong':
-            if(isset($_POST['themloai']) && ($_POST['themloai'])){
+            if (isset($_POST['themloai']) && ($_POST['themloai'])) {
                 $tenloaiphong = $_POST['tenloai'];
                 insert_room_type($tenloaiphong);
                 $thongbao = "Thêm thành công!";
@@ -21,6 +21,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'phong':
             echo "<h1>hi</h1>";
             break;
+        case 'uploade':
+            include './room_types/list.php';
             break;
     }
 } else {
