@@ -32,7 +32,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'listlp':
             $room_type = loadall_room_type();
-            include "list.php";
+            include "./room_types/list.php";
             break;
         case 'phong':
             echo "<h1>hi</h1>";
