@@ -38,8 +38,8 @@ function update_room($id, $name)
 function loadall_room_type()
 {
     $sql = "select * from room_types order by id desc";
-    $listdanhmuc = pdo_query($sql);
-    return  $listdanhmuc;
+    $room_type = pdo_query($sql);
+    return  $room_type;
 }
 // xoa 
 function delete_room_type($id)
