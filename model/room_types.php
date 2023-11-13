@@ -28,3 +28,15 @@ function loadone_room_type($room_type_id)
     $room_type = pdo_query_one($sql);
     return $room_type;
 }
+// sua 
+function update_room($id, $room_type_name)
+{
+    $sql = "update room_types set room_type_name='$room_type_name' where id= $id";
+    pdo_execute($sql);
+}
+function loadall_room_type()
+{
+    $sql = "select * from room_types order by id desc";
+    $listdanhmuc = pdo_query($sql);
+    return  $listdanhmuc;
+}

@@ -18,10 +18,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include './room_types/add.php';
             break;
+        case "suatype":
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                if (isset($_POST['testcapnhap'])) {
+                    $tenloai = $_POST['tenloai'];
+                    $id = $_GET['id'];
+                    update_room($id, $tenloai);
+                    $thongbao = "Cập nhật thành công";
+                    header("Location: index.php?act=listlp");
+                }
+            }
+            include "update.php";
+            break;
+        case 'listlp':
+            $list_room_type = loadall_room_type();
+            include "list.php";
+            break;
         case 'phong':
             echo "<h1>hi</h1>";
             break;
-        case 'uploade':
+        case 'update':
             include './room_types/list.php';
             break;
     }
