@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KING HOTEL</title>
+    <title><?= $title ?></title>
     <?php require('view/layout/links.php') ?>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
@@ -21,6 +21,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="./view/css/style.css">
 </head>
 
 <body class="bg-light">
@@ -82,8 +83,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <button type="submit" class="btn btn-dark shadow-none">Login</button>
-                            <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot
-                                password?</a>
+                            <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot password?</a>
                         </div>
                     </div>
                 </form>

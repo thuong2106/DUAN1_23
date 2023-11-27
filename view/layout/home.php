@@ -28,6 +28,7 @@
                     <div class="col-lg-2 mb-3">
                         <label class="form-label" style="font-weight: 500;">Children</label>
                         <select class="form-select shadow-none">
+
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -46,7 +47,42 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 my-3">
+            <div class="col-lg-4s col-md-6s my-3s">
+                <?php foreach ($list_three_home as $lth) : ?>
+                    <?php extract($lth) ?>
+                    <div class="cards border-os shadows" style="max-width: 350px; margin: auto;">
+                        <div class="cards-small">
+                            <img src="./upload/<?= $img ?>" class="card-img-top">
+                            <div class="card-body">
+                                <h5><?= $room_name ?></h5>
+                                <h6 class="mb-4">$<?= $price ?> per night</h6>
+                            </div>
+                            <div>
+                                <i style="color: <?= $status ? 'red' : 'green'; ?>">
+                                <?= $status ? 'Hết phòng' : 'Còn phòng'; ?>
+                                </i>
+                            </div>                                  
+                           <div class="rating mb-6" style="margin-top: 20px">
+                                <h6 class="mb-1">Rating</h6>
+                                <span class="badge rounded-pill bg-light">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-evenly mb-2">
+                                <a></a>
+                                <a href="?act=booknow&id=<?= $id ?>" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+                                <a href="?act=detail&id=<?= $id ?>" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-o shadow" style="max-width: 350px; margin: auto;">
                     <img src="view/images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
@@ -103,7 +139,7 @@
                         </div>
                         <div class="d-flex justify-content-evenly mb-2">
                             <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                            <a href="detail.php" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                            <a href="../layout/detail.php" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
                         </div>
                     </div>
                 </div>
@@ -169,69 +205,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 my-3">
-                <div class="card border-o shadow" style="max-width: 350px; margin: auto;">
-                    <img src="view/images/rooms/1.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Simple Room Name</h5>
-                        <h6 class="mb-4">$200 per night</h6>
-                        <div class="features mb-4">
-                            <h6 class="mb-1">features</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                2 Rooms
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                2 Bathrooms
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                1 Balcony
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                3 Sofa
-                            </span>
-                        </div>
-                        <div class="facilities mb-4">
-                            <h6 class="mb-1">features</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Wifi
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Televison
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                AC
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Room heater
-                            </span>
-                        </div>
-                        <div class="guests mb-4">
-                            <h6 class="mb-1">Guests</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                5 Adults
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                4 Children
-                            </span>
-                        </div>
-                        <div class="rating mb-4">
-                            <h6 class="mb-1">Rating</h6>
-                            <span class="badge rounded-pill bg-light">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </span>
-                        </div>
-                        <div class="d-flex justify-content-evenly mb-2">
-                            <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                            <a href="detail.php" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
 
             <div class="col-lg-12 text-center mt-5">
                 <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms >>></a>
